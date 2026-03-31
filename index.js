@@ -27,7 +27,9 @@ app.use(cors(corsOption));
 app.use("/api/v1/user",userRoute); 
 app.use("/api/v1/message",messageRoute);
  
-
+app.get("/", (req, res) => {
+  res.send("API Running...");
+});
 server.listen(PORT, ()=>{
     connectDB();
     console.log(`Server listen at prot ${PORT}`);
